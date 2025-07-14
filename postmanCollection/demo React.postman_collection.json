@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "772c784d-26dd-4ae5-9dc0-608ee155e67d",
+		"name": "demo React",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36300123"
+	},
+	"item": [
+		{
+			"name": "add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Robin Singhal\",\r\n    \"email\": \"Robin@gmail.com\",\r\n    \"age\": \"28\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/add",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/get?id=6874ac254bd1f826c0868d8f",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"get"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6874ac254bd1f826c0868d8f"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get All",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Robin Singhal\",\r\n    \"email\": \"Robin@gmail.com\",\r\n    \"age\": \"28\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/getall",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"getall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"6874ac254bd1f826c0868d8f\",\r\n    \"name\": \"Surya\",\r\n    \"email\": \"Robin@gmail.com\",\r\n    \"age\": \"28\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/update",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
