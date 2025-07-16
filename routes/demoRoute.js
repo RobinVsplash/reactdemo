@@ -10,6 +10,7 @@ router.post('/add', async (req, res) => {
         email,
         age
     })
+
     return res.status(200).json({
         status: "success",
         data

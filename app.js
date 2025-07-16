@@ -8,7 +8,8 @@ const dotenv = require('dotenv');
 dotenv.config('.env')
 
 
-const demoRoute = require('./routes/demoRoute.js')
+const demoRoute = require('./routes/demoRoute.js');
+const mongoDBConnection = require('./config/db.js');
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -16,13 +17,13 @@ app.use(cors({
     origin: '*'
 }));
 
-// mongodb connection 
-const mongoDBConnection = async (url) => {
-    await mongoose.connect(url, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    })
-};
+// // mongodb connection 
+// const mongoDBConnection = async (url) => {
+//     await mongoose.connect(url, {
+//         useNewUrlParser: true,
+//         useUnifiedTopology: true
+//     })
+// };
 
 mongoDBConnection(process.env.MONGO_URI)
     .then(() => {

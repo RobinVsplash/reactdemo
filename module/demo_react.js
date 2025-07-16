@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const { type } = require('os')
 
 const schema = new mongoose.Schema({
     name: String,
