@@ -1,0 +1,121 @@
+/* Form.css - Professional, clean styling for the CRUD form */
+
+.crud-container {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07), 0 1.5px 6px rgba(0,0,0,0.03);
+  padding: 32px 28px 24px 28px;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+.crud-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.crud-form input {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+.crud-form input:focus {
+  border-color: #646cff;
+  outline: none;
+}
+
+.crud-form button {
+  background: linear-gradient(90deg, #646cff 0%, #4f46e5 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.crud-form button:hover {
+  background: linear-gradient(90deg, #4f46e5 0%, #646cff 100%);
+}
+
+.crud-table {
+  width: 100%;
+  margin-top: 24px;
+  border-collapse: collapse;
+  background: #fafbfc;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(100,108,255,0.04);
+}
+.crud-table th, .crud-table td {
+  padding: 12px 10px;
+  text-align: left;
+}
+.crud-table th {
+  background: #f3f4f6;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #4f46e5;
+}
+.crud-table tr {
+  border-bottom: 1px solid #e5e7eb;
+}
+.crud-table tr:last-child {
+  border-bottom: none;
+}
+.crud-table td {
+  color: #374151;
+}
+
+.crud-action-btn {
+  background: #f1f5f9;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  margin-right: 6px;
+  padding: 5px 11px;
+  font-size: 0.98rem;
+  cursor: pointer;
+  transition: background 0.17s, color 0.17s;
+}
+.crud-action-btn:hover {
+  background: #646cff;
+  color: #fff;
+  border-color: #646cff;
+}
+
+.crud-header {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4f46e5;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.crud-error {
+  color: #dc2626;
+  background: #fef2f2;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .crud-container {
+    padding: 18px 6px 14px 6px;
+  }
+  .crud-header {
+    font-size: 1.1rem;
+  }
+  .crud-table th, .crud-table td {
+    padding: 7px 3px;
+    font-size: 0.98rem;
+  }
+}
