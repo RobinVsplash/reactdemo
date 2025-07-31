@@ -8,14 +8,14 @@ const router = express.Router();
 router.post('/blog', upload.single('image'), async (req, res) => {
     try {
         const { title, content, author } = req.body;
-        console.log(req.get('host'));
+        // console.log(req.get('host'));
         let imageUrl = '';
         if (req.file) {
-            if (req.get('host').includes('localhost')) {
-                imageUrl = `/uploads/${req.file.filename}`;
-            } else {
+            // if (req.get('host').includes('localhost')) {
+            //     imageUrl = `/uploads/${req.file.filename}`;
+            // } else {
                 imageUrl = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;
-            }
+            // }
         }
         const blog = await Blog.create({ title, content, author, imageUrl });
         res.status(201).json({ status: 'success', data: blog });
@@ -27,7 +27,7 @@ router.post('/blog', upload.single('image'), async (req, res) => {
 // READ all Blogs
 router.get('/blog', async (req, res) => {
     try {
-        console.log(req.get('host'));
+        // console.log(req.get('host'));
         const blogs = await Blog.find();
         res.status(200).json({ status: 'success', data: blogs });
     } catch (err) {
@@ -53,11 +53,11 @@ router.patch('/blog/:id', upload.single('image'), async (req, res) => {
         let updateData = { title, content, author };
 
         if (req.file) {
-            if (req.get('host').includes('localhost')) {
-                updateData.imageUrl = `/uploads/${req.file.filename}`;
-            } else {
+            // if (req.get('host').includes('localhost')) {
+            //     updateData.imageUrl = `/uploads/${req.file.filename}`;
+            // } else {
                 updateData.imageUrl = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;
-            }
+            // }
         }
         const blog = await Blog.findByIdAndUpdate(req.params.id, updateData, { new: true });
         if (!blog) return res.status(404).json({ status: 'error', message: 'Blog not found' });
