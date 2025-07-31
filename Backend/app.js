@@ -1,15 +1,16 @@
-const express = require('express')
-const mongoose = require('mongoose');
-const cors = require('cors');
-const app = express()
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import demoRoute from './routes/demoRoute.js';
+import blogRoute from './routes/blogRoute.js';
+import mongoDBConnection from './config/db.js';
+
+const app = express();
+
+
 const port = 3000;
-const dotenv = require('dotenv');
-// const  mongoDBConnection  = require('./config.js/db');
-dotenv.config('.env')
-
-
-const demoRoute = require('./routes/demoRoute.js');
-const mongoDBConnection = require('./config/db.js');
+// import { mongoDBConnection } from './config.js/db';
+dotenv.config('.env');
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -35,7 +36,10 @@ mongoDBConnection(process.env.MONGO_URI)
 
 
     // router
+app.use('/uploads', express.static('public/uploads'));
+
 app.use('/api/v1', demoRoute)
+app.use('/api/v1', blogRoute)
 
 
 app.listen(port, () => {

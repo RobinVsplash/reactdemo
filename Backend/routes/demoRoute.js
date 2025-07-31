@@ -1,6 +1,13 @@
-const express = require('express');
-const demo_react = require('../module/demo_react');
-const router = express.Router()
+import express from 'express';
+import demo_react from '../module/demo_react.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const router = express.Router();
+
+// Helper for __dirname in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 router.post('/add', async (req, res) => {
     const { name, email, age } = req.body;
@@ -73,4 +80,4 @@ router.delete('/delete', async (req, res) => {
     })
 })
 
-module.exports = router
+export default router;

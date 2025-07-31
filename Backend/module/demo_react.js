@@ -1,11 +1,11 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose';
 
 const schema = new mongoose.Schema({
     name: String,
     age: Number,
     email: String,
-}, { collection: "demo_react" })
+}, { collection: "demo_react" });
 
-const demo_react = mongoose.model("demo_react", schema)
+const demo_react = mongoose.model("demo_react", schema);
 
-module.exports = demo_react
+export default demo_react;
